@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+</head>
+
+<body>
+  <!-- LOGIN -->
+  <section id="boxLogin loggedOut">
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-12 col-md-12">
+
+
+          <br>
+
+
+          <!--correo electronico-->
+          <div class="row">
+            <div class="col-10 col-md-5 mx-auto">
+              <div class="form-group login-form">
+                <input id="txtEmail" type="email" class="form-control pd" placeholder="email" required="required">
+                <input id="txtPassword" type="password" class="form-control pd" placeholder="Password" required="required">
+                <div class="row">
+                  <br>
+                  <button id="loginButton" onclick="loginWithFirebase()" class="btn btn-lg btn-primary btn-block text-center justify-center"
+                    type="submit">Ingresar</button>
+
+
+                  <!-- LINKEAR FACEBOOK -->
+                  <div class="col-12">
+                    <button class="btn btn-block" onclick="facebookLoginwithFireBase()">
+                      <i class="" fab fa-facebook-f rounded-circle></i> Sign in facebook</button>
+                    <a href="#" id="facebookButton" class="btn btn-lg btn-block omb_btn-facebook">
+                  </div>
+
+                  <!-- INGRESA CON google-->
+                  <div class="col-12">
+                    <button class="btn btn-secondary inline pd full green-two" onclick="googleLoginwithFireBase()">
+                      <i class="fab fa-google"></i> Sign in google</button>
+                  </div>
+                  <h4>¿NO TIENES CUENTA?</h4>
+                  <input id="registerButton" onclick="registerWithFirebase()" type="button" value="REGISTER">
+
+                </div>
+              </div>
+            </div>
+</section>
+<footer>
+   <script src="login.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyAaxMrNrGnpVWU6SB8qlnf--f4QwR1Gny8",
+      authDomain: "final-common-core.firebaseapp.com",
+      databaseURL: "https://final-common-core.firebaseio.com",
+      projectId: "final-common-core",
+      storageBucket: "",
+      messagingSenderId: "892623666558"
+    };
+    firebase.initializeApp(config);
+  </script>
+  </footer>
+</body>
+
+</html>
