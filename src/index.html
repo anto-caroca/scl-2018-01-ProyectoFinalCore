@@ -8,26 +8,25 @@
     <title>Final common core</title>
 </head>
 <body>
+  <!--Opción para enviar imagen-->
+  <div id="divImagen">
+    <input id="photoFileSelector" type="file"> <input id="sendPhoto" type="button" onclick="sendPhotoToStorage()" value="SEND PHOTO">
+</div>
+    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAaxMrNrGnpVWU6SB8qlnf--f4QwR1Gny8",
+        authDomain: "final-common-core.firebaseapp.com",
+        databaseURL: "https://final-common-core.firebaseio.com",
+        projectId: "final-common-core",
+        storageBucket: "final-common-core.appspot.com",
+        messagingSenderId: "892623666558"
+      };
+      firebase.initializeApp(config);
+    </script>
+    <!--Fin firebase-->
 
-    <h1>Prueba pull request</h1>
-    <h1>Prueba pull request anto</h1>
-    
+  <script src="app.js"></script>
 </body>
-<footer>
-
-<script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyAaxMrNrGnpVWU6SB8qlnf--f4QwR1Gny8",
-    authDomain: "final-common-core.firebaseapp.com",
-    databaseURL: "https://final-common-core.firebaseio.com",
-    projectId: "final-common-core",
-    storageBucket: "",
-    messagingSenderId: "892623666558"
-  };
-  firebase.initializeApp(config);
-</script>
-</footer>
-
 </html>
