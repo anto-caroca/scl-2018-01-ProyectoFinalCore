@@ -1,12 +1,9 @@
 window.onload = () => {
-    firebase.auth().onAuthStateChanged(function(user) {
+    firebase.auth().onAuthStateChanged(user => {
         if (user) {
-            // User is signed in.
-        } else {
-            window.location = "index.html";
+            location.href="logout.html";// aqui se debe redireccionar a hoja de login
         }
     });
-
 }
 
 function registerWithFirebase() {
@@ -74,4 +71,3 @@ firebase.auth().signInWithPopup(provider).then(function(result) {
     let credential = error.credential;
 });
 }
-

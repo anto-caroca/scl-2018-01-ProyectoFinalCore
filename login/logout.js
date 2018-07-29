@@ -1,5 +1,5 @@
-  // logout
-  function logoutWithFireBase() {
+// logout
+function logoutWithFireBase() {
     firebase.auth().signOut()
         .then(() => {
             location.href = "login.html";
