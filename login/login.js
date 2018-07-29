@@ -5,7 +5,7 @@ window.onload = () => {
         }
     });
 }
-// Registro 
+
 function registerWithFirebase() {
 
 const emailValue = txtEmail.value
