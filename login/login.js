@@ -1,10 +1,10 @@
-window.onload = () => {
-    firebase.auth().onAuthStateChanged(user => {
-        if (user) {
-            location.href="";// aqui se debe redireccionar a hoja de login
-        }
-    });
-}
+// //indow.onload = () => {
+//     firebase.auth().onAuthStateChanged(user => {
+//         if (user) {
+//             location.href="";// aqui se debe redireccionar a hoja de login
+//         }
+//     });
+// }
 
 function registerWithFirebase() {
 
