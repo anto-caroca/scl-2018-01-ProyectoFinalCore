@@ -8,26 +8,20 @@
   <title>iF Blanco Visitas</title>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.css">
   <!--por si acaso-->
 </head>
 
 <body class="yellow darken-1">
 
-    <div id="fb-root"></div>
-    <script>(function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = 'https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v3.1&appId=338755959991793&autoLogAppEvents=1';
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
+    
 
   <div class="container">
 
     
       <div class="row">
-          <div class="col s12 m6 offset-m3 black">
+          <div class="col s12 m6 offset-m3 grey darken-3">
               <h1 class="white-text">IF Blanco Visitas</h1>
             </div>
         <div class="col s12 m6 offset-m3 white ">
@@ -35,23 +29,16 @@
           <input id="txtEmail" type="email" placeholder="email" required="required">
           <input id="txtPassword" type="password" placeholder="Password" required="required">
       
-          <button id="loginButton" class="waves-effect btn yellow darken-1" onclick="loginWithFirebase()" type="submit">Ingresar</button>
+          <button id="loginButton" class="waves-effect btn grey darken-3" onclick="loginWithFirebase()" type="submit">Ingresar</button>
       
-<!--boton api facebook-->
-          <div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
-
-
-      <!--boton anterior facebook-->
-          <button onclick="facebookLoginwithFireBase()">
-            <i class="" fab fa-facebook-f rounded-circle></i> Sign in facebook</button>
-          <a href="#" id="facebookButton">
-      
-      
-            <button onclick="googleLoginwithFireBase()">
+          <button onclick="facebookLoginwithFireBase()" class="waves-effect btn grey darken-3">
+              <i class="fab fa-facebook"></i> Sign in facebook</button>
+       
+            <button onclick="googleLoginwithFireBase()" class="waves-effect btn grey darken-3">
               <i class="fab fa-google"></i> Sign in google</button>
       
             <h4>¿NO TIENES CUENTA?</h4>
-            <input id="registerButton" onclick="registerWithFirebase()" type="button" value="REGISTER">
+            <input id="registerButton" class="waves-effect btn grey darken-3" onclick="registerWithFirebase()" type="button" value="REGISTER">
         </div>
       </div>
       </div>
