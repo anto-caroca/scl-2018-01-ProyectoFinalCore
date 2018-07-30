@@ -12,34 +12,34 @@ window.onload = () => {
   firebase.database().ref("visitas")
     .on("child_added", (newVisita) => {
       contenido.innerHTML = `
+      <div class="row">
           <div id="publicacion-${newVisita.key}"> </div>
-              <div class="row">
-                  <div>
-                      <p>Nombre : ${newVisita.val().nameURL}<p>   
+                  <div class = "col m2">
+                      <p> ${newVisita.val().nameURL}<p>   
                   </div>
 
-                  <div>
-                     <p>Rut : ${newVisita.val().rutURL}<p>   
+                  <div class = "col m2">
+                     <p> ${newVisita.val().rutURL}<p>   
                   </div>
 
-                  <div>
-                      <p>patente : ${newVisita.val().credencialURL}<p>   
+                  <div class = "col m2">
+                      <p> ${newVisita.val().credencialURL}<p>   
                   </div>
 
-                  <div>
-                     <p>credencial : ${newVisita.val().patenteURL}<p>   
+                  <div class = "col m2">
+                     <p> ${newVisita.val().patenteURL}<p>   
                   </div>
 
-                  <div>
-                     <p>LLegada : FUNCION DE MARCAR LLEGADA<p>  
+                  <div class = "col m1">
+                     <p> 14:30<p>  
                   </div>
 
 
-                  <div>
-                  <p>Salida : FUNCION DE MARCAR SALIDA<p>   
+                  <div class = "col m1">
+                  <p> 16:30<p>   
                   </div>
 
-               <div>
+               <div class = "col m1">
                <button>marcar salida</button>   
                </div>
  
