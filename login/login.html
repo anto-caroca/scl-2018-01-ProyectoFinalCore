@@ -5,79 +5,78 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-
+  <title>iF Blanco Visitas</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+  <link rel="stylesheet" href="css/style.css">
+  <!--por si acaso-->
 </head>
 
-<body>
-  <!-- LOGIN -->
-  <section id="boxLogin loggedOut">
-    <div class="container text-center">
+<body class="yellow darken-1">
+
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v3.1&appId=338755959991793&autoLogAppEvents=1';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+  <div class="container">
+
+    
       <div class="row">
-        <div class="col-12 col-md-12">
-
-
-          <br>
-
-
-          <!--correo electronico-->
-          <div class="row">
-            <div class="col-10 col-md-5 mx-auto">
-              <div class="form-group login-form">
-                <input id="txtEmail" type="email" class="form-control pd" placeholder="email" required="required">
-                <input id="txtPassword" type="password" class="form-control pd" placeholder="Password" required="required">
-                <div class="row">
-                  <br>
-                  <button id="loginButton" onclick="loginWithFirebase()" class="btn btn-lg btn-primary btn-block text-center justify-center"
-                    type="submit">Ingresar</button>
-
-
-                  
-                  <div class="col-12">
-                    <button class="btn btn-block" onclick="facebookLoginwithFireBase()">
-                      <i class="" fab fa-facebook-f rounded-circle></i> Sign in facebook</button>
-                    <a href="#" id="facebookButton" class="btn btn-lg btn-block omb_btn-facebook">
-                  </div>
-
-            
-                  <div class="col-12">
-                    <button class="btn btn-secondary inline pd full green-two" onclick="googleLoginwithFireBase()">
-                      <i class="fab fa-google"></i> Sign in google</button>
-                  </div>
-                  <h4>¿NO TIENES CUENTA?</h4>
-                  <input id="registerButton" onclick="registerWithFirebase()" type="button" value="REGISTER">
-
-                </div>
-              </div>
+          <div class="col s12 m6 offset-m3 black">
+              <h1 class="white-text">IF Blanco Visitas</h1>
             </div>
-</section>
-<footer>
-   <script src="login.js"></script>
+        <div class="col s12 m6 offset-m3 white ">
+      
+          <input id="txtEmail" type="email" placeholder="email" required="required">
+          <input id="txtPassword" type="password" placeholder="Password" required="required">
+      
+          <button id="loginButton" class="waves-effect btn yellow darken-1" onclick="loginWithFirebase()" type="submit">Ingresar</button>
+      
+<!--boton api facebook-->
+          <div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
+
+
+      <!--boton anterior facebook-->
+          <button onclick="facebookLoginwithFireBase()">
+            <i class="" fab fa-facebook-f rounded-circle></i> Sign in facebook</button>
+          <a href="#" id="facebookButton">
+      
+      
+            <button onclick="googleLoginwithFireBase()">
+              <i class="fab fa-google"></i> Sign in google</button>
+      
+            <h4>¿NO TIENES CUENTA?</h4>
+            <input id="registerButton" onclick="registerWithFirebase()" type="button" value="REGISTER">
+        </div>
+      </div>
+      </div>
+
+
+
+
+  <!--INICIO JS-->
+  <script src="login.js"></script>
+  <script src="js/materialize.min.js"></script>
+  <!--materialize-->
   <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-database.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
-  
-  <script>
+<script>
+  // Initialize Firebase
   var config = {
-    // ...
+    apiKey: "AIzaSyAaxMrNrGnpVWU6SB8qlnf--f4QwR1Gny8",
+    authDomain: "final-common-core.firebaseapp.com",
+    databaseURL: "https://final-common-core.firebaseio.com",
+    projectId: "final-common-core",
+    storageBucket: "final-common-core.appspot.com",
+    messagingSenderId: "892623666558"
   };
   firebase.initializeApp(config);
 </script>
-  <script>
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyAaxMrNrGnpVWU6SB8qlnf--f4QwR1Gny8",
-      authDomain: "final-common-core.firebaseapp.com",
-      databaseURL: "https://final-common-core.firebaseio.com",
-      projectId: "final-common-core",
-      storageBucket: "",
-      messagingSenderId: "892623666558"
-    };
-    firebase.initializeApp(config);
-  </script>
-  </footer>
+
 </body>
 
 </html>
