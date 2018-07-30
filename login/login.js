@@ -52,7 +52,7 @@ firebase.auth().signInWithPopup(provider)
     .catch((error) => {
         console.log('error de firebase > codigo ' + error.code)
         console.log('error de firebase > codigo ' + error.message)
-        //document.getElementById('message').innerHTML = error.message
+        
     })
 }
 // login with google
@@ -71,3 +71,4 @@ firebase.auth().signInWithPopup(provider).then(function(result) {
     let credential = error.credential;
 });
 }
+
