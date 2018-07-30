@@ -1,7 +1,7 @@
-indow.onload = () => {
+window.onload = () => {
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
-            location.href="";// aqui se debe redireccionar a hoja de login
+            window.location = "panel.html";// aqui se debe redireccionar a hoja de login
         }
     });
 }

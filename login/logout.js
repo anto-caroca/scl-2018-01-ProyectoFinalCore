@@ -2,7 +2,7 @@
   function logoutWithFireBase() {
     firebase.auth().signOut()
         .then(() => {
-            location.href = "logout.html";
+            location.href = "login.html";
             console.log('usuario finalizo su sesion')
         })
         .catch();
