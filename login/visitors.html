@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Visitas IF</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+
+    <section class="container" id="publicarEvento">
+
+
+        <div>
+            <input id="nombreUsuario" type="text" placeholder="Nombre usuario:">
+        </div>
+
+
+        <div>
+            <input id="rutVisita" type="text" placeholder="RUT usuario:">
+        </div>
+
+        <div>
+            <select>
+                <option value="ifBlanco">IF Blanco</option>
+                <option value="laboratoria">Laboratoria</option>
+                <option value="cdi">cdi</option>
+                <option value="aguasLab">AguasLab</option>
+            </select>
+        </div>
+
+        <div>
+            <input id="cre" type="text" placeholder="numero tarjeta">
+        </div>
+
+     
+
+        <div>
+            <input id="pat"  type="text" placeholder="Patente:">
+        </div>
+
+
+
+        <input class="botonPublicar" id="sendText" onclick="sendText()" type="button" value="Ingresar" data-="publicaciones">
+
+
+
+    </section>
+
+    <section class="container" id="contenido"></section>
+
+
+    <script src="logout.js"></script>
+    <script src="visitors.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyAaxMrNrGnpVWU6SB8qlnf--f4QwR1Gny8",
+            authDomain: "final-common-core.firebaseapp.com",
+            databaseURL: "https://final-common-core.firebaseio.com",
+            projectId: "final-common-core",
+            storageBucket: "",
+            messagingSenderId: "892623666558"
+        };
+        firebase.initializeApp(config);
+    </script>
+</body>
+
+</html>
