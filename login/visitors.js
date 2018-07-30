@@ -23,11 +23,11 @@ window.onload = () => {
                   </div>
 
                   <div class = "col m2">
-                      <p> ${newVisita.val().credencialURL}</p>   
+                      <p> ${newVisita.val().patenteURL}</p>   
                   </div>
 
                   <div class = "col m2">
-                     <p> ${newVisita.val().patenteURL}</p>   
+                     <p> ${newVisita.val().credencialURL}</p>   
                   </div>
 
                   <div class = "col m1">
@@ -36,7 +36,7 @@ window.onload = () => {
 
 
                   <div class = "col m1">
-                  <p> 16:30<p>   
+                  <p> 16:30</p>   
                   </div>
 
                <div class = "col m1">
