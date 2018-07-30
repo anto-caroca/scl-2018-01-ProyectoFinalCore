@@ -14,33 +14,34 @@ window.onload = () => {
       contenido.innerHTML = `
       <div class="row">
           <div id="publicacion-${newVisita.key}"> </div>
-                  <div class = "col m3">
+                  <div class = "col m3 s8">
                       <p> ${newVisita.val().nameURL}</p>   
                   </div>
 
-                  <div class = "col m2">
+                  <div class = "col m2 hide-on-small-only hide-on-med-only">
                      <p> ${newVisita.val().rutURL}</p>   
                   </div>
 
-                  <div class = "col m2">
+                  
+                  <div class = "col m2 hide-on-small-only hide-on-med-only">
+                     <p> Laboratoria</p>   
+                  </div>
+
+                  <div class = "col m2 hide-on-small-only hide-on-med-only">
                       <p> ${newVisita.val().patenteURL}</p>   
                   </div>
 
-                  <div class = "col m2">
-                     <p> ${newVisita.val().credencialURL}</p>   
-                  </div>
-
-                  <div class = "col m1">
+                  <div class = "col m1 hide-on-small-only">
                      <p> 14:30</p>  
                   </div>
 
 
-                  <div class = "col m1">
+                  <div class = "col m1 hide-on-small-only">
                   <p> 16:30</p>   
                   </div>
 
-               <div class = "col m1">
-               <button>marcar salida</button>   
+               <div class = "col m1 s4">
+               <p><button>Marcar</button>   </p>
                </div>
  
               </div>
@@ -51,10 +52,9 @@ window.onload = () => {
 };
 
 // Para publicar texto
-function sendText() {
+function sendText() { // por aqui debería estar la funcion de send email
   const nombre = nombreUsuario.value;
   const rut = rutVisita.value;
-  const credencial= cre.value;
   const patente = pat.value;
   const newVisitorKey = firebase.database().ref().child("visitas").push().key;
   const currentUser = firebase.auth().currentUser;
@@ -62,7 +62,6 @@ function sendText() {
   firebase.database().ref(`visitas/${newVisitorKey}`).set({
     nameURL: nombre,
     rutURL: rut,
-    credencialURL:credencial,
     patenteURL: patente,
     creator: currentUser.uid,
     photoUrl: currentUser.photoURL

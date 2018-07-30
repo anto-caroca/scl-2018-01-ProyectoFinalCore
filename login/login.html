@@ -9,11 +9,12 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <!--por si acaso-->
 </head>
 
-<body class="yellow darken-1">
+<body class="teal lighten-5">
 
     
 
@@ -21,24 +22,24 @@
 
     
       <div class="row">
-          <div class="col s12 m6 offset-m3 grey darken-3">
-              <h1 class="white-text">IF Blanco Visitas</h1>
+          <div class="col s12 m4 offset-m4">
+              <h4 class="white-text">IF Blanco Visitas</h4>
             </div>
-        <div class="col s12 m6 offset-m3 white ">
+        <div class="col s12 m4 offset-m4 white">
       
-          <input id="txtEmail" type="email" placeholder="email" required="required">
-          <input id="txtPassword" type="password" placeholder="Password" required="required">
-      
-          <button id="loginButton" class="waves-effect btn grey darken-3" onclick="loginWithFirebase()" type="submit">Ingresar</button>
-      
-          <button onclick="facebookLoginwithFireBase()" class="waves-effect btn grey darken-3">
+          <input id="txtEmail" type="email" placeholder="Email" required="required" class="col s12 formLogin">
+          <input id="txtPassword" type="password" placeholder="Password" required="required" class="col s12 formLogin">
+    
+          <button id="loginButton" class="waves-effect btn teal lighten-2 col s12 btnLogin" onclick="loginWithFirebase()" type="submit">Ingresar</button>
+   
+          <button onclick="facebookLoginwithFireBase()" class="waves-effect btn teal lighten-2 col s12 btnLogin">
               <i class="fab fa-facebook"></i> Sign in facebook</button>
        
-            <button onclick="googleLoginwithFireBase()" class="waves-effect btn grey darken-3">
+            <button onclick="googleLoginwithFireBase()" class="waves-effect btn teal lighten-2 col s12 btnLogin">
               <i class="fab fa-google"></i> Sign in google</button>
       
-            <h4>¿NO TIENES CUENTA?</h4>
-            <input id="registerButton" class="waves-effect btn grey darken-3" onclick="registerWithFirebase()" type="button" value="REGISTER">
+            <p>¿NO TIENES CUENTA?<p>
+            <input id="registerButton" class="waves-effect btn teal lighten-3" onclick="registerWithFirebase()" type="button" value="REGISTER">
         </div>
       </div>
       </div>
