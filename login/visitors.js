@@ -14,24 +14,24 @@ window.onload = () => {
       contenido.innerHTML = `
       <div class="row">
           <div id="publicacion-${newVisita.key}"> </div>
-                  <div class = "col m2">
-                      <p> ${newVisita.val().nameURL}<p>   
+                  <div class = "col m3">
+                      <p> ${newVisita.val().nameURL}</p>   
                   </div>
 
                   <div class = "col m2">
-                     <p> ${newVisita.val().rutURL}<p>   
+                     <p> ${newVisita.val().rutURL}</p>   
                   </div>
 
                   <div class = "col m2">
-                      <p> ${newVisita.val().credencialURL}<p>   
+                      <p> ${newVisita.val().credencialURL}</p>   
                   </div>
 
                   <div class = "col m2">
-                     <p> ${newVisita.val().patenteURL}<p>   
+                     <p> ${newVisita.val().patenteURL}</p>   
                   </div>
 
                   <div class = "col m1">
-                     <p> 14:30<p>  
+                     <p> 14:30</p>  
                   </div>
 
 
