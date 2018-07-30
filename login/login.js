@@ -1,11 +1,11 @@
-indow.onload = () => {
+window.onload = () => {
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
-            location.href="";// aqui se debe redireccionar a hoja de login
+            location.href="visitors.html";// aqui se debe redireccionar a hoja de login
         }
     });
 }
-// Registro 
+
 function registerWithFirebase() {
 
 const emailValue = txtEmail.value
@@ -52,7 +52,7 @@ firebase.auth().signInWithPopup(provider)
     .catch((error) => {
         console.log('error de firebase > codigo ' + error.code)
         console.log('error de firebase > codigo ' + error.message)
-        //document.getElementById('message').innerHTML = error.message
+        
     })
 }
 // login with google
