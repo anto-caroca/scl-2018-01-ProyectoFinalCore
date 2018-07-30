@@ -21,7 +21,7 @@ firebase.auth().createUserWithEmailAndPassword(emailValue, passwordValue)
         document.getElementById('message').innerHTML = error.message
     })
 }
-// Login
+
 function loginWithFirebase() {
 
 const emailValue = txtEmail.value
