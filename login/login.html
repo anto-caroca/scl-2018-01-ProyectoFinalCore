@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
   <title>iF Blanco Visitas</title>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
@@ -16,16 +17,26 @@
 
 <body class="teal lighten-5">
 
-    
-
-  <div class="container">
-
-    
-      <div class="row">
           <div class="col s12 m4 offset-m4">
               <h4 class="white-text">IF Blanco Visitas</h4>
             </div>
         <div class="col s12 m4 offset-m4 white">
+
+          <div class="col s12 m6 offset-m3 black">
+              <h1 class="white-text">IF Blanco Visitas</h1>
+            </div>
+        <div class="col s12 m6 offset-m3 white ">
+      
+          <input id="txtEmail" type="email" placeholder="email" required="required">
+          <input id="txtPassword" type="password" placeholder="Password" required="required">
+      
+          <button id="loginButton" class="waves-effect btn yellow darken-1" onclick="loginWithFirebase()" type="submit">Ingresar</button>
+      
+
+          <button onclick="facebookLoginwithFireBase()">
+            <i class="" fab fa-facebook-f rounded-circle></i> Sign in facebook</button>
+          <a href="#" id="facebookButton">
+
       
           <input id="txtEmail" type="email" placeholder="Email" required="required" class="col s12 formLogin">
           <input id="txtPassword" type="password" placeholder="Password" required="required" class="col s12 formLogin">
@@ -44,27 +55,33 @@
       </div>
       </div>
 
-
-
-
-  <!--INICIO JS-->
-  <script src="login.js"></script>
-  <script src="js/materialize.min.js"></script>
-  <!--materialize-->
+        
+   <script src="login.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
-<script>
-  // Initialize Firebase
+
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-database.js"></script>
+
+  
+  <script>
   var config = {
-    apiKey: "AIzaSyAaxMrNrGnpVWU6SB8qlnf--f4QwR1Gny8",
-    authDomain: "final-common-core.firebaseapp.com",
-    databaseURL: "https://final-common-core.firebaseio.com",
-    projectId: "final-common-core",
-    storageBucket: "final-common-core.appspot.com",
-    messagingSenderId: "892623666558"
+    // ...
   };
   firebase.initializeApp(config);
 </script>
-
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyAaxMrNrGnpVWU6SB8qlnf--f4QwR1Gny8",
+      authDomain: "final-common-core.firebaseapp.com",
+      databaseURL: "https://final-common-core.firebaseio.com",
+      projectId: "final-common-core",
+      storageBucket: "final-common-core.appspot.com",
+      messagingSenderId: "892623666558"
+    };
+    firebase.initializeApp(config);
+  </script>
+ 
 </body>
 
 </html>
