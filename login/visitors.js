@@ -46,54 +46,61 @@ window.onload = () => {
 };
 
 //marcar llegada y salida
-let llegada = 0;
+let llegada = 0; //declaramos variables globales de llegada y salida
 let salida=0;
 
-var HoraActual = new Date();
+var HoraActual = new Date(); // rescata la fecha y hora
 //let Ano = HoraActual.getFullYear().toString();
 //let Mes = HoraActual.getMonth().toString();
 //let Dia = HoraActual.getDate().toString();
-let hora = HoraActual.getHours().toString();
-let minutos = HoraActual.getMinutes().toString();
+let hora = HoraActual.getHours().toString(); // rescatamos la hora
+let minutos = HoraActual.getMinutes().toString(); // y los minutos
 
-llegada = hora + ":" + minutos;
+llegada = hora + ":" + minutos; // declaramos la hora de llegada
 
-if (minutos < 10) {
+if (minutos < 10) { // cuando son las 15:06 el js muestra 15:6, este if es para que se vea el 0
   llegada = hora + ":0" + minutos;
 }
 
-function salidaVisita (key){
+function salidaVisita (key){ // funcion de salida
 
-  const newVisitorKey = firebase.database().ref().child("visitas").push().key;
+  const newVisitorKey = firebase.database().ref().child("visitas").push().key; // aun no lee la variable
   
   salida=hora + ":" + minutos;
   if (minutos < 10) {
-    salida = hora + ":0" + minutos;
+    salida = hora + ":0" + minutos; // idem a lo anterior
   }
 
-  document.getElementById("salida-"+key).innerHTML=salida;
+  // la llamé, y guardé, pero guando guardo la hora, me crea un nuevo key con datos vacios, ese es el problema :c
 
+  document.getElementById("salida-"+key).innerHTML=salida; // muestra la hora de salida en un id, revisa linea 33
 
+// al poner key, nos identifica la publicacion, si el key solo nos marca el primer id que pilla
+
+// estoy tratando de poner el .set() para guardar la hora de salida, pero no me funciona aun :c
+// pero puedes guiarte con la funcion de guardar texto :)
 
 }
 
+// MUY IMPORTANTE: .ref() . set() .database() etc... son funciones de firebase
+
 // Para registrar visita
 function sendText() { // por aqui debería estar la funcion de send email (?)
-  const nombre = nombreUsuario.value;
-  const rut = rutVisita.value;
-  const patente = pat.value;
-  const horaLLegada=llegada;
+  const nombre = nombreUsuario.value; // recibe el nombre del usuario en el input
+  const rut = rutVisita.value; // idem
+  const patente = pat.value; // idem
+  const horaLLegada=llegada; // guarda la hora actual
   
-  const newVisitorKey = firebase.database().ref().child("visitas").push().key;
-  const currentUser = firebase.auth().currentUser;
+  const newVisitorKey = firebase.database().ref().child("visitas").push().key; // aqui declaramos una variable que va a almacenar datos con un push y su key (que es como el id de la publicacion)
+  const currentUser = firebase.auth().currentUser; // esta indica si estamos logeadas
 
-  firebase.database().ref(`visitas/${newVisitorKey}`).set({
-    nameURL: nombre,
+  firebase.database().ref(`visitas/${newVisitorKey}`).set({ // esta linea es la que guarda los objetos .set() hace la magia de guardar
+    nameURL: nombre, // estos son los objetos que vamos guardando
     rutURL: rut,
     patenteURL: patente,
     llegadaURL: horaLLegada,
-    //salidaURL: horaSalida,
-    creator: currentUser.uid,
+    //salidaURL: horaSalida, porque no esta declarada aun, porque no tenemos la hora de salida
+    creator: currentUser.uid, // el uid. es el id del usuario y el key es como el id de la publicacion
 
   });
 
