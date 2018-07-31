@@ -17,29 +17,22 @@ window.onload = () => {
                   <div class = "col m3 s8">
                       <p> ${newVisita.val().nameURL}</p>   
                   </div>
-
                   <div class = "col m2 hide-on-small-only hide-on-med-only">
                      <p> ${newVisita.val().rutURL}</p>   
                   </div>
-
                   
                   <div class = "col m2 hide-on-small-only hide-on-med-only">
                      <p> Laboratoria</p>   
                   </div>
-
                   <div class = "col m2 hide-on-small-only hide-on-med-only">
                       <p> ${newVisita.val().patenteURL}</p>   
                   </div>
-
                   <div class = "col m1 hide-on-small-only">
-                     <p> 14:30</p>  
+                     <p> ${newVisita.val().llegadaURL}</p>  
                   </div>
-
-
                   <div class = "col m1 hide-on-small-only">
                   <p> 16:30</p>   
                   </div>
-
                <div class = "col m1 s4">
                <p><button>Marcar</button>   </p>
                </div>
@@ -51,11 +44,29 @@ window.onload = () => {
     });
 };
 
-// Para publicar texto
-function sendText() { // por aqui debería estar la funcion de send email
+//marcar llegada y salida
+
+let llegada = 0;
+let salida=0;
+var HoraActual = new Date();
+//let Ano = HoraActual.getFullYear().toString();
+//let Mes = HoraActual.getMonth().toString();
+//let Dia = HoraActual.getDate().toString();
+let hora = HoraActual.getHours().toString();
+let minutos = HoraActual.getMinutes().toString();
+
+llegada = hora + ":" + minutos;
+
+if (minutos < 10) {
+  llegada = hora + ":0" + minutos;
+}
+
+// Para registrar visita
+function sendText() { // por aqui debería estar la funcion de send email (?)
   const nombre = nombreUsuario.value;
   const rut = rutVisita.value;
   const patente = pat.value;
+  const horaLLegada=llegada;
   const newVisitorKey = firebase.database().ref().child("visitas").push().key;
   const currentUser = firebase.auth().currentUser;
 
@@ -63,7 +74,11 @@ function sendText() { // por aqui debería estar la funcion de send email
     nameURL: nombre,
     rutURL: rut,
     patenteURL: patente,
+    llegadaURL: horaLLegada,
     creator: currentUser.uid,
     photoUrl: currentUser.photoURL
   });
+
+  location.reload(); // refresca la pantalla para mostrar la hora actual
 };
+
