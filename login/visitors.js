@@ -81,7 +81,6 @@ function salidaVisita (key){
 function sendText() { // por aqui debería estar la funcion de send email (?)
   const nombre = nombreUsuario.value;
   const rut = rutVisita.value;
-  const credencial= cre.value;
   const patente = pat.value;
   const horaLLegada=llegada;
   
@@ -91,7 +90,6 @@ function sendText() { // por aqui debería estar la funcion de send email (?)
   firebase.database().ref(`visitas/${newVisitorKey}`).set({
     nameURL: nombre,
     rutURL: rut,
-    credencialURL:credencial,
     patenteURL: patente,
     llegadaURL: horaLLegada,
     //salidaURL: horaSalida,
