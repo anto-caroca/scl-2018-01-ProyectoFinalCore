@@ -8,44 +8,39 @@ window.onload = () => {
     .catch((error) => {
       console.log("Database error >" + error);
     });
-  //Hay que poner funcion de hora en linea 34 y salida en linea 39
+  
   firebase.database().ref("visitas")
     .on("child_added", (newVisita) => {
       contenido.innerHTML = `
-      <div class="row">
           <div id="publicacion-${newVisita.key}"> </div>
-                  <div class = "col m3 s8">
-                      <p> ${newVisita.val().nameURL}</p>   
+              <div class="row">
+                  <div>
+                      <p>Nombre : ${newVisita.val().nameURL}<p>   
                   </div>
-
-                  <div class = "col m2 hide-on-small-only hide-on-med-only">
-                     <p> ${newVisita.val().rutURL}</p>   
-                  </div>
-
-                  
-                  <div class = "col m2 hide-on-small-only hide-on-med-only">
-                     <p> Laboratoria</p>   
-                  </div>
-
-                  <div class = "col m2 hide-on-small-only hide-on-med-only">
-                      <p> ${newVisita.val().patenteURL}</p>   
-                  </div>
-
-
-                  <div class = "col m1 hide-on-small-only">
 
                   <div>
-                     <p>LLegada : <p>  
+                     <p>Rut : ${newVisita.val().rutURL}<p>   
+                  </div>
 
+                  <div>
+                      <p>patente : ${newVisita.val().credencialURL}<p>   
+                  </div>
+
+                  <div>
+                     <p>credencial : ${newVisita.val().patenteURL}<p>   
+                  </div>
+
+                  <div>
+                  
                   </div>
 
 
-                  <div class = "col m1 hide-on-small-only">
-                  <p> 16:30</p>   
+                  <div>
+                  <p>Salida : FUNCION DE MARCAR SALIDA<p>   
                   </div>
 
-               <div class = "col m1 s4">
-               <p><button>Marcar</button>   </p>
+               <div>
+               <button>marcar salida</button>   
                </div>
  
               </div>
@@ -56,9 +51,10 @@ window.onload = () => {
 };
 
 // Para publicar texto
-function sendText() { // por aqui debería estar la funcion de send email
+function sendText() {
   const nombre = nombreUsuario.value;
   const rut = rutVisita.value;
+  const credencial= cre.value;
   const patente = pat.value;
   const newVisitorKey = firebase.database().ref().child("visitas").push().key;
   const currentUser = firebase.auth().currentUser;
@@ -66,9 +62,11 @@ function sendText() { // por aqui debería estar la funcion de send email
   firebase.database().ref(`visitas/${newVisitorKey}`).set({
     nameURL: nombre,
     rutURL: rut,
+    credencialURL:credencial,
     patenteURL: patente,
     creator: currentUser.uid,
-    photoUrl: currentUser.photoURL
+    photoUrl: currentUser.photoURL,
+  
   });
 };
 
@@ -77,6 +75,7 @@ function sendText() { // por aqui debería estar la funcion de send email
 
 function ObtenerHora()
 {
+  
     var HoraActual = new Date();
     let Ano = HoraActual.getFullYear().toString();
     let Mes = HoraActual.getMonth().toString();
@@ -88,8 +87,3 @@ function ObtenerHora()
     return TextHora;
 }
 
-function BotonPrueba()
-{
-    let testo = ObtenerHora();
-    console.log(testo);
-}

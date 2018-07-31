@@ -6,105 +6,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Visitas IF</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>iF Blanco Visitas</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
-        crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <!--por si acaso-->
+
 </head>
 
-<body class="teal lighten-5">
-    <nav>
-        <div class="nav-wrapper grey darken-3">
-            <a href="#" class="brand-logo">IF BLANCO</a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <button onclick="logoutWithFireBase()">logout</button>
-            </ul>
+<body>
+
+    <section class="container" id="publicarEvento">
+
+
+        <div>
+            <input id="nombreUsuario" type="text" placeholder="Nombre usuario:">
         </div>
-    </nav>
 
-    <div class="container">
-        <div class="row">
-            <h5>Registro Visitas IF</h5>
+
+        <div>
+            <input id="rutVisita" type="text" placeholder="RUT usuario:">
         </div>
-        <section class="row white">
 
-            <div class=" input-field col m3 s12">
-                <input id="nombreUsuario" type="text" class="white" placeholder="Nombre usuario:">
-            </div>
+        <div>
+            <select>
+                <option value="ifBlanco">IF Blanco</option>
+                <option value="laboratoria">Laboratoria</option>
+                <option value="cdi">cdi</option>
+                <option value="aguasLab">AguasLab</option>
+            </select>
+        </div>
 
-            <div class=" input-field col m2 s12">
-                <input id="rutVisita" type="text" class="white" placeholder="RUT usuario:">
-            </div>
+        <div>
+            <input id="cre" type="text" placeholder="numero tarjeta">
+        </div>
 
-            <div class="input-field col m2 s12">
-                <input id="pat" type="text" class="white" placeholder="Patente:">
-            </div>
+       
 
-            <div class="input-field col m3 s12">
-                <select>
-                    <option value="" disabled selected>Oficina</option>
-                    <option value="1">Laboratoria</option>
-                    <option value="2">CDI</option>
-                    <option value="3">AguasLab</option>
-                </select>
-            </div>
-
-            <div class="input-field col m2">
-                <button  class="waves-effect btn teal lighten-2 col s12 btnLogin" id="sendText" onclick="sendText()" value="Ingresar">Ingresar</button>
-            </div>
-
-        </section>
-
-        <section class="row">
-
-
-        </section>
-
-        <section class="row">
-            <div class="col m3 s8 grey">
-                <h6>Nombre </h6>
-            </div>
-
-            <div class="col m2 hide-on-small-only hide-on-med-only grey">
-                <h6>Rut </h6>
-            </div>
-
-            <div class="col m2 hide-on-small-only hide-on-med-only grey">
-                <h6>Oficina </h6>
-            </div>
-
-            <div class="col m2 hide-on-small-only hide-on-med-only grey">
-                <h6>Patente </h6>
-            </div>
-
-            <div class="col m1 hide-on-small-only grey">
-                <h6> LLegada</h6>
-            </div>
-
-            <div class="col m1 hide-on-small-only grey">
-                <h6> Salida</h6>
-            </div>
-
-            <div class="col m1 s4 grey">
-                <h6> check</h6>
-            </div>
+        <div>
+            <input id="pat"  type="text" placeholder="Patente:">
+        </div>
 
 
 
+        <input class="botonPublicar" id="sendText" onclick="sendText()" type="button" value="Ingresar" data-="publicaciones">
 
-
-            <div id="contenido" class="white"></div>
-        </section>
-    </div>
-
-
+        
     </section>
 
-    </div>
+    <section class="container" id="contenido"></section>
+
+
     <script src="logout.js"></script>
     <script src="visitors.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
