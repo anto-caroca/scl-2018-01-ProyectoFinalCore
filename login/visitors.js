@@ -31,7 +31,7 @@ window.onload = () => {
                   </div>
 
                   <div>
-                     <p>LLegada : FUNCION DE MARCAR LLEGADA<p>  
+                     <p>LLegada : <p>  
                   </div>
 
 
@@ -70,26 +70,23 @@ function sendText() {
 };
 
 
-// //var d = new Date(); // se crea objeto fecha
-// var hora = d.getHours(); // se obtiene hora de la fecha
-// var minutos = d.getMinutes(); // se obtoienen minutos de la fecha
-// Post.metric = {};// se crea obj metric que guarda las metricas (fecha, hora post)
+//hora
 
-// let fecha = d.getFullYear()+"-"+d.getMonth()+"-"+d.getDay();// se le
-// Post.metric.time = fecha+"--"+hora+"."+minutos;// se guarda fecha y hora
-// let user = firebase.auth().currentUser;// obtenemos usuario logado
-// var ref = firebase.database().ref("Muro/"+ user.uid + "/Posts");// referenciamos posicion de la base de datos
-// var newRef = ref.push();// sube los datos
-// console.log(Post.date);
-// newRef.set(Post);//set se guardan datos en lugar de la referencia
-// }
+function ObtenerHora()
+{
+    var HoraActual = new Date();
+    let Ano = HoraActual.getFullYear().toString();
+    let Mes = HoraActual.getMonth().toString();
+    let Dia = HoraActual.getDate().toString();
+    let Hora = HoraActual.getHours().toString();
+    let Minutos = HoraActual.getMinutes().toString();
 
-// function ObtenerPostUser()
-// {
-// let user = firebase.auth().currentUser;// obtener usuario
-// console.log(user.uid)
-// var ref = firebase.database().ref("Muro/"+user.uid);// se referencia posicion de la base de datos muro user
-// ref.orderByChild('metric/time').on("child_added", function(snapshot){// se obtiene obj de la base de datos
-//     console.log(snapshot.val());
-// });
-// }
+    let TextHora = Ano + "-" + Mes + "-" + Dia + "--" + Hora + ":" + Minutos;
+    return TextHora;
+}
+
+function BotonPrueba()
+{
+    let testo = ObtenerHora();
+    console.log(testo);
+}
