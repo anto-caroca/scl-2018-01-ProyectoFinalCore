@@ -58,54 +58,51 @@
                 <button  class="waves-effect btn teal lighten-2 col s12 btnLogin" id="sendText" onclick="sendText()" value="Ingresar">Ingresar</button>
             </div>
 
-        </section>
+</head>
 
-        <section class="row">
+<body>
+
+    <section class="container" id="publicarEvento">
 
 
-        </section>
+        <div>
+            <input id="nombreUsuario" type="text" placeholder="Nombre usuario:">
+        </div>
 
-        <section class="row">
-            <div class="col m3 s8 grey">
-                <h6>Nombre </h6>
-            </div>
 
-            <div class="col m2 hide-on-small-only hide-on-med-only grey">
-                <h6>Rut </h6>
-            </div>
+        <div>
+            <input id="rutVisita" type="text" placeholder="RUT usuario:">
+        </div>
 
-            <div class="col m2 hide-on-small-only hide-on-med-only grey">
-                <h6>Oficina </h6>
-            </div>
+        <div>
+            <select>
+                <option value="ifBlanco">IF Blanco</option>
+                <option value="laboratoria">Laboratoria</option>
+                <option value="cdi">cdi</option>
+                <option value="aguasLab">AguasLab</option>
+            </select>
+        </div>
 
-            <div class="col m2 hide-on-small-only hide-on-med-only grey">
-                <h6>Patente </h6>
-            </div>
+        <div>
+            <input id="cre" type="text" placeholder="numero tarjeta">
+        </div>
 
-            <div class="col m1 hide-on-small-only grey">
-                <h6> LLegada</h6>
-            </div>
+       
 
-            <div class="col m1 hide-on-small-only grey">
-                <h6> Salida</h6>
-            </div>
-
-            <div class="col m1 s4 grey">
-                <h6> check</h6>
-            </div>
-
+        <div>
+            <input id="pat"  type="text" placeholder="Patente:">
+        </div>
 
 
 
+        <input class="botonPublicar" id="sendText" onclick="sendText()" type="button" value="Ingresar" data-="publicaciones">
 
-            <div id="contenido" class="white"></div>
-        </section>
-    </div>
-
-
+        
     </section>
 
-    </div>
+    <section class="container" id="contenido"></section>
+
+
     <script src="logout.js"></script>
     <script src="visitors.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
