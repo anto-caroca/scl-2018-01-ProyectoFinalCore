@@ -29,8 +29,10 @@ Entregables de diseño :
 <img src="/images/2.jpeg" alt="Sketch de Baja Fidelidad"/>
     
   -Entrevistas con usuarios diferentes ().
+  #
   -Experiencia “cliente incógnito” el registro de visitas en WeWork y comparación con nuestra solución y con la referencia que  brindaron Envoy. (https://docs.google.com/document/d/10ZqhQyTVlsp-G_dZRcIlp9XL3SN8MFTJs_D6RgGuUoU/edit?usp=sharing)
-    * Prototipo clickeable de alta fidelidad hecho en Marvel(https://marvelapp.com/5e30fgf/screen/46291705).
+  #
+    - Prototipo clickeable de alta fidelidad hecho en Marvel(https://marvelapp.com/5e30fgf/screen/46291705).
     
 
 ### Implementación:
