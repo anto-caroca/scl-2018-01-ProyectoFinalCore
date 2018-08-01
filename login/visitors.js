@@ -34,7 +34,7 @@ window.onload = () => {
     </div>
     <div class="col m1 s4">
       <p>
-        <button onclick="salidaVisita('${newVisita.key}')" class="waves-effect btn yellow darken-2">Marcar</button>
+        <button id="cierre-${newVisita.key}" onclick="salidaVisita('${newVisita.key}')" class="waves-effect btn yellow accent-3 grey-text text-darken-2">Marcar</button>
       </p>
     </div>
   </div>
@@ -64,8 +64,6 @@ if (minutos < 10) { // cuando son las 15:06 el js muestra 15:6, este if es para 
 
 function salidaVisita (key){ // funcion de salida
 
-  
-  
   salida=hora + ":" + minutos;
   if (minutos < 10) {
     salida = hora + ":0" + minutos; // idem a lo anterior
@@ -74,7 +72,7 @@ function salidaVisita (key){ // funcion de salida
   // la llamé, y guardé, pero guando guardo la hora, me crea un nuevo key con datos vacios, ese es el problema :c
 
   document.getElementById("salida-"+key).innerHTML=salida; // muestra la hora de salida en un id, revisa linea 33
-
+  document.getElementById("cierre-"+key).disabled = true;
 // al poner key, nos identifica la publicacion, si el key solo nos marca el primer id que pilla
 
 // estoy tratando de poner el .set() para guardar la hora de salida, pero no me funciona aun :c
