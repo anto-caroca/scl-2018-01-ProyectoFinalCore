@@ -71,7 +71,7 @@ function salidaVisita (key){ // funcion de salida
     salida = hora + ":0" + minutos; // idem a lo anterior
   }
 
-  // la llamé, y guardé, pero guando guardo la hora, me crea un nuevo key con datos vacios, ese es el problema :c
+ 
 
   document.getElementById("salida-"+key).innerHTML=salida; // muestra la hora de salida en un id, revisa linea 33
 
