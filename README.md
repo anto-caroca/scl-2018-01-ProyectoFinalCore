@@ -1,4 +1,5 @@
 # Proyecto Final Common Core
+
 ## Who's Here? Registro de visitantes
 A continuación encontrarás un sistema de registro de visitantes que pretende sustituir la tediosa rutina manual de papel y lápiz que aun se utiliza en muchas partes para controlar en ingreso de las personas a un lugar.
 
@@ -12,6 +13,7 @@ Durante este proyecto, se trabajó en equipo de tres integrantes. La planificaci
 Durante este proceso, se realizaron entrevistas a los usuarios anteriormente señalados. Se desarrolló un sketch de baja fidelidad, se discutió el diseño, las características y funcionalidades que se brindaran considerando las necesidades de los usuarios. Posteriormente se desarrolló un prototipo de alta fidelidad.
 
 
+
 ## Detalles sobre la implementación
 
     * La lógica del proyecto  está implementada completamente en JavaScript (ES6), HTML y CSS. 
@@ -23,7 +25,7 @@ Durante este proceso, se realizaron entrevistas a los usuarios anteriormente se�
 ## Diseño:
 Entregables de diseño :
 
-## Sketch baja fidelidad
+## Sketch mediana fidelidad
 
 <img src="/images/1.jpeg" alt="Sketch de Baja Fidelidad"/>
 <img src="/images/2.jpeg" alt="Sketch de Baja Fidelidad"/>

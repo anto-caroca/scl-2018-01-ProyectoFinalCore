@@ -1,8 +1,8 @@
 function Enviar(){
     var correo = 'antonellacaroca@gmail.com';//aca podemos dejar los emails por defecto
     var mensaje = '*IF BLANCO ANUNCIA*';
-    var nombreVisita = '***Juanita Perez  ***';
-    var nombreEmpresa = '***Pollitos bebes***';
+    var nombreVisita = '';
+    var nombreEmpresa = '¿Donde vas?';
     EnvioCorreo(correo, mensaje, nombreVisita, nombreEmpresa);
 }
 
