@@ -16,19 +16,31 @@
 <body class="teal lighten-5">
 
   <div class="container">
+    <div class="row">
+      <div class="col s12 m4 offset-m4">
+        <h4 class="white-text">IF Blanco Visitas</h4>
+      </div>
+      <div class="col s12 m4 offset-m4 white">
+  
+        <input id="txtEmail" type="email" placeholder="Email" required="required" class="col s12 formLogin">
+        <input id="txtPassword" type="password" placeholder="Password" required="required" class="col s12 formLogin">
+  
+        <button id="loginButton" class="waves-effect btn teal lighten-2 col s12 btnLogin" onclick="loginWithFirebase()" type="submit">Ingresar</button>
+  
+        <button onclick="facebookLoginwithFireBase()" class="waves-effect btn teal lighten-2 col s12 btnLogin">
+          <i class="fab fa-facebook"></i> Sign in facebook</button>
+  
+        <button onclick="googleLoginwithFireBase()" class="waves-effect btn teal lighten-2 col s12 btnLogin">
+          <i class="fab fa-google"></i> Sign in google</button>
+  
+        <p>¿NO TIENES CUENTA?
+          <p>
+            <input id="registerButton" class="waves-effect btn teal lighten-3" onclick="registerWithFirebase()" type="button" value="REGISTER">
+      </div>
+    </div>
 
-      <div class="row">
-          <div class="col s12 m4 offset-m4">
-              <h4 class="white-text">IF Blanco Visitas</h4>
-            </div>
-        <div class="col s12 m4 offset-m4 white">
-      
-              <p>¿NO TIENES CUENTA?<p>
-              <input id="registerButton" class="waves-effect btn teal lighten-3" onclick="registerWithFirebase()" type="button" value="REGISTER">
-          </div>
-        </div>
-      </div>
-      </div>
+  </div>
+  </div>
 
   <!--INICIO JS-->
   <script src="login.js"></script>

@@ -34,7 +34,7 @@ window.onload = () => {
     </div>
     <div class="col m1 s4">
       <p>
-        <button onclick="salidaVisita('${newVisita.key}')">Marcar</button>
+        <button onclick="salidaVisita('${newVisita.key}')" class="waves-effect btn yellow darken-2">Marcar</button>
       </p>
     </div>
   </div>
@@ -47,7 +47,7 @@ window.onload = () => {
 
 //marcar llegada y salida
 let llegada = 0; //declaramos variables globales de llegada y salida
-let salida=0;
+let salida="0";
 
 var HoraActual = new Date(); // rescata la fecha y hora
 //let Ano = HoraActual.getFullYear().toString();
@@ -64,7 +64,7 @@ if (minutos < 10) { // cuando son las 15:06 el js muestra 15:6, este if es para 
 
 function salidaVisita (key){ // funcion de salida
 
-  const newVisitorKey = firebase.database().ref().child("visitas").push().key; // aun no lee la variable
+  
   
   salida=hora + ":" + minutos;
   if (minutos < 10) {
@@ -90,7 +90,7 @@ function sendText() { // por aqui debería estar la funcion de send email (?)
   const rut = rutVisita.value; // idem
   const patente = pat.value; // idem
   const horaLLegada=llegada; // guarda la hora actual
-  
+  //const horaSalida=salida;
   const newVisitorKey = firebase.database().ref().child("visitas").push().key; // aqui declaramos una variable que va a almacenar datos con un push y su key (que es como el id de la publicacion)
   const currentUser = firebase.auth().currentUser; // esta indica si estamos logeadas
 
@@ -99,7 +99,7 @@ function sendText() { // por aqui debería estar la funcion de send email (?)
     rutURL: rut,
     patenteURL: patente,
     llegadaURL: horaLLegada,
-    //salidaURL: horaSalida, porque no esta declarada aun, porque no tenemos la hora de salida
+    //salidaURL: horaSalida, //porque no esta declarada aun, porque no tenemos la hora de salida
     creator: currentUser.uid, // el uid. es el id del usuario y el key es como el id de la publicacion
 
   });
