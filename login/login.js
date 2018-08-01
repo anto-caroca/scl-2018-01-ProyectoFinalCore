@@ -17,8 +17,23 @@ firebase.auth().createUserWithEmailAndPassword(emailValue, passwordValue)
         redirectFromLogin()
     })
     .catch((error) => {
+        console.log("Error de firebase > Código > "+error.code);
         console.log('error de firebase > codigo ' + error.message)
-        document.getElementById('message').innerHTML = error.message
+        // document.getElementById('message').innerHTML = error.message
+        
+        if (error.code === "auth/email-already-in-use") {
+            
+            alert('usuario registrado')
+         }
+
+         if (error.code === "auth/invalid-email") {
+             
+             alert('Debes ingresar tus datos')
+         }
+         if (error.code === "auth/weak-password") {
+             
+             alert('Ingresa contraseña numérica de al menos 6 carácteres')
+         }
     })
 }
 
@@ -36,6 +51,7 @@ firebase.auth().signInWithEmailAndPassword(emailValue, passwordValue)
     .catch((error) => {
         console.log('error de firebase > codigo ' + error.message)
         document.getElementById('message').innerHTML = error.message
+        alert('contraseña inválida')
     })
 }
 // login with facebook
