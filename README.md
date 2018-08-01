@@ -25,8 +25,8 @@ Entregables de diseño :
 
 ## Sketch baja fidelidad
 
-<img src="/imgages/1.jpeg" alt="Sketch de Baja Fidelidad"/>
-<img src="/imgages/2.jpeg" alt="Sketch de Baja Fidelidad"/>
+<img src="/images/1.jpeg" alt="Sketch de Baja Fidelidad"/>
+<img src="/images/2.jpeg" alt="Sketch de Baja Fidelidad"/>
     
     *  Entrevistas con usuarios diferentes ().
     * Experiencia “cliente incógnito” el registro de visitas en WeWork y comparación con nuestra solución y con la referencia que  brindaron Envoy. (https://docs.google.com/document/d/10ZqhQyTVlsp-G_dZRcIlp9XL3SN8MFTJs_D6RgGuUoU/edit?usp=sharing)
